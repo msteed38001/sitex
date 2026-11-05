@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<title>$title - Steed Data Engineering</title>-->
-	<title>Social Media - Steed Data Engineering</title>
+	<title>Social Media Application - Steed Data Engineering</title>
     
     <link rel="stylesheet" href="site.css">
 </head>
@@ -18,7 +17,6 @@
     <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/social_media_00.png'); background-size: cover; background-position: center;"><h1 class="hero-title">Social Media: The Local Publishing Pipeline</h1><p class="hero-subtitle">The Social Media app isn't just a database - it's a local asset generation pipeline. </p></div>
 
     <main class="zone-center">
-        <!--<h2 class="page-title">$title</h2>-->
 		<h2 class="page-title"></h2>
         <p>Built on the exact same Micro-Kernel interface as Cardex and TUIDex, this app takes structured data (quotes, stats, war stories) and renders them into pixel-perfect PNGs and PDFs using Pillow. It formats content specifically for LinkedIn and Instagram, entirely on your local machine. </p>
 <p>No Canva subscriptions. No cloud API limits. Just pure Python generating high-resolution graphics.</p>
@@ -39,7 +37,7 @@
 </div>
 </div>
 
-<h3>The Interface</h3>
+<h2>The Interface</h2>
 <p>Here is the grid view where the posts are staged. Notice the fields for <code>Template</code>, <code>Batch</code>, <code>Subject</code>, and <code>Format</code>. </p>
 <div class="columns-wrapper">
 <div class="column">
@@ -60,7 +58,7 @@
 </div>
 </div>
 
-<h3>The Pipeline in Action</h3>
+<h2>The Pipeline in Action</h2>
 <p>This is where the Micro-Kernel gets interesting. The engine reads the text and the <code>templates.toml</code> config, uses Pillow to render the background, text positioning, and typography, and spits out a final asset ready to be uploaded.</p>
 <p>Here is an example of a generated post, alongside the TOML configuration that defined its layout and fonts:</p>
 <div class="columns-wrapper">
@@ -82,7 +80,7 @@
 </div>
 </div>
 
-<h3>Why Local Generation?</h3>
+<h2>Why Local Generation?</h2>
 <p>Tools like Canva are great, but they require a browser, a subscription, and a stable internet connection. If you are pushing out content regularly, you need a system that is repeatable and fast. </p>
 <p>By keeping this in the terminal, you can write a quote, assign it a template, and export a batch of 20 high-res PNGs in seconds. The output is deterministic. The layout engine doesn't break. And because it's part of the Micro-Kernel, your source data is stored locally in SQLite.</p>
 <details class="accordion">
@@ -105,7 +103,7 @@
             <p>Service Areas: Tennessee | Arkansas | Missouri | Mississippi | Louisiana | Kentucky</p>
         </div>
         <div class="footer-links">
-            <a href="privacy.html">Privacy</a> <a href="support.html">Support</a> <a href="contact.html">Contact</a> 
+            <a href="privacy.html">Privacy</a> <a href="contact.html">Contact</a> 
         </div>
         <p class="footer-copyright">© 2026 Steed Data Engineering</p>
     </footer>

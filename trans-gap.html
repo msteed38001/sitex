@@ -3,7 +3,6 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<title>$title - Steed Data Engineering</title>-->
 	<title>Transactions Gap - Steed Data Engineering</title>
     
     <link rel="stylesheet" href="site.css">
@@ -18,7 +17,6 @@
     <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/trans_gap.png'); background-size: cover; background-position: center;"><h1 class="hero-title">The PYTD vs. YTD Autopsy</h1><p class="hero-subtitle">Standard ERP reports show what sold. This tool shows what stopped selling. </p></div>
 
     <main class="zone-center">
-        <!--<h2 class="page-title">$title</h2>-->
 		<h2 class="page-title"></h2>
         <p>Transaction Gaps is a pure Python CLI tool that compares Prior Year-To-Date (PYTD) to Current Year-To-Date (YTD) at the customer, vendor, and item level. It ignores the noise of standard dashboards and dives into the raw transaction stream to identify true lost sales, expose hidden product line swaps, and find the customer churn hiding behind flat revenue.</p>
 <div class="columns-wrapper">
@@ -38,7 +36,15 @@
 </div>
 </div>
 
-<h3>The Output</h3>
+<h2>How It Works</h2>
+<p>There is no cloud database and no API connection. The data is processed locally, on your machine, inside a standardized SQLite file.</p>
+<ol>
+<li><strong>The Export:</strong> You export a standard flat file (CSV or TSV) from your ERP.</li>
+<li><strong>The Template:</strong> I map your raw columns to a standardized SQLite schema. You don't have to change your ERP; I just map your data to my template.</li>
+<li><strong>The Execution:</strong> You run the Python script (or I run it remotely on a secure transfer) to query the local SQLite file, compare the Prior and Current windows, and generate the CSV/terminal output.</li>
+</ol>
+<p>Because it runs on standard hardware, it processes tens of thousands of rows in seconds. No cloud latency. No API rate limits. Just raw, local execution.</p>
+<h2>The Output</h2>
 <p>The script groups the output into three distinct buckets: LOST (bought in the old window, not the new), NEW (bought in the new window, not the old), and SAME (bought in both windows, but the quantity or vendor changed). </p>
 <p>Here is the actual terminal output showing a customer whose spend dropped from $110.55 to $66.33, revealing a product swap, and another customer who completely churned:</p>
 <div class="columns-wrapper">
@@ -60,7 +66,7 @@
 </div>
 </div>
 
-<h3>The Runtime Options</h3>
+<h2>The Runtime Options</h2>
 <p>Because it's a CLI script, it's incredibly flexible. You can run a broad sweep across the whole database, or drill down into a single customer or vendor to trace the exact evidence. </p>
 <div class="card">
 <pre><code># Run the full PYTD vs YTD gap analysis
@@ -75,7 +81,7 @@ python src/inventory/trans_gap.py --vendor 98600
 # Define custom prior and current date windows
 python src/inventory/trans_gap.py --prior 2025-01-01:2025-12-31 --current 2026-01-01:2026-12-31
 
-# Dump every row tagged prior/current/neither for debugging
+# Dump every row tagged prior/current/neither
 python src/inventory/trans_gap.py --dump
 </code></pre>
 </div>
@@ -94,7 +100,7 @@ python src/inventory/trans_gap.py --dump
             <p>Service Areas: Tennessee | Arkansas | Missouri | Mississippi | Louisiana | Kentucky</p>
         </div>
         <div class="footer-links">
-            <a href="privacy.html">Privacy</a> <a href="support.html">Support</a> <a href="contact.html">Contact</a> 
+            <a href="privacy.html">Privacy</a> <a href="contact.html">Contact</a> 
         </div>
         <p class="footer-copyright">© 2026 Steed Data Engineering</p>
     </footer>

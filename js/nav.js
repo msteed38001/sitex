@@ -51,6 +51,10 @@ document.addEventListener('DOMContentLoaded', function () {
         "href": "business.html"
     },
     {
+        "label": "Services",
+        "href": "services.html"
+    },
+    {
         "label": "Documents",
         "children": [
             {
@@ -73,10 +77,6 @@ document.addEventListener('DOMContentLoaded', function () {
             {
                 "label": "Contact",
                 "href": "contact.html"
-            },
-            {
-                "label": "Support",
-                "href": "support.html"
             }
         ]
     }

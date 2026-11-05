@@ -3,8 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<title>$title - Steed Data Engineering</title>-->
-	<title>Report Card - Steed Data Engineering</title>
+	<title>Report Card Application - Steed Data Engineering</title>
     
     <link rel="stylesheet" href="site.css">
 </head>
@@ -18,10 +17,9 @@
     <div class="hero" style="background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('images/report_card.png'); background-size: cover; background-position: center;"><h1 class="hero-title">The Data Quality Report Card</h1><p class="hero-subtitle">If you have 75,000 SKUs, you don't need a cloud cluster to tell you if the data is clean. You need a weighted, deterministic audit. </p></div>
 
     <main class="zone-center">
-        <!--<h2 class="page-title">$title</h2>-->
 		<h2 class="page-title"></h2>
-        <h3>The Data Quality Report Card</h3>
-<p>If you have 75,000 SKUs, you don't need a cloud cluster to tell you if the data is clean. You need a weighted, deterministic audit. </p>
+        <h2>The Data Quality Report Card</h2>
+<p>If you have tens of thousands of SKUs, you don't need a cloud cluster to tell you if the data is clean. You need a weighted, deterministic audit. </p>
 <p>The Report Card is a pure Python CLI tool that runs a standardized inventory sheet (in SQLite) through a series of TOML-defined validation rules. It doesn't just check for nulls. It applies business logic, calculates weighted severity scores, and generates a visual report card that tells you exactly where your data is failing.</p>
 <p>No Databricks. No Pandas. Just raw Python running against a local database.</p>
 <div class="columns-wrapper">
@@ -41,7 +39,7 @@
 </div>
 </div>
 
-<h3>The Output</h3>
+<h2>The Output</h2>
 <p>The tool generates a summary dashboard at the top, showing the top findings by violation count, and then dives into a detailed breakdown of every rule. </p>
 <p>Here is the actual output from a 75,720-SKU audit, showing the weighted severity scores and the ASCII bar charts for the failing segments:</p>
 <div class="card">
@@ -53,7 +51,7 @@
 </dialog></p>
 </div>
 
-<h3>The Architecture</h3>
+<h2>The Architecture</h2>
 <p>The Report Card is built on the same Micro-Kernel philosophy as everything else. The Python code (<code>main.py</code>, <code>rules.py</code>, <code>score.py</code>, <code>charts.py</code>) is completely generic. The business logic lives entirely in the TOML configuration. </p>
 <p>You can define custom rules, set weights, and add new segments without touching a single line of Python. If you need a new format check or a new business rule, you just add it to the TOML.</p>
 <details class="accordion">
@@ -67,7 +65,7 @@
 <summary>Why not just use Pandas?</summary>
 <div class="accordion-content">
 <p>Pandas is great for ad-hoc analysis, but it's terrible for deterministic, repeatable audits. It silently coerces data types, it drops rows with hidden characters, and it requires a massive dependency tree.</p>
-<p>This tool uses raw SQLite and pure Python dictionaries. It is fast, it is deterministic, and it runs on an 8GB laptop. It will still run exactly the same way in 10 years.</p>
+<p>This tool uses raw SQLite and pure Python dictionaries. It is fast, it is deterministic, and it runs locally on a standard laptop. It will still run exactly the same way in 10 years.</p>
 </div>
 </details>
     </main>
@@ -77,7 +75,7 @@
             <p>Service Areas: Tennessee | Arkansas | Missouri | Mississippi | Louisiana | Kentucky</p>
         </div>
         <div class="footer-links">
-            <a href="privacy.html">Privacy</a> <a href="support.html">Support</a> <a href="contact.html">Contact</a> 
+            <a href="privacy.html">Privacy</a> <a href="contact.html">Contact</a> 
         </div>
         <p class="footer-copyright">© 2026 Steed Data Engineering</p>
     </footer>
